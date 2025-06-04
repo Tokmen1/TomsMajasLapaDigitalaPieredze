@@ -39,12 +39,13 @@
       position: sticky;
       top: 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 5%;
       margin-left: -5vw;
       margin-right: -5vw;
-      transition: top 0.3s;
+      transition: top 0.5s;
       z-index: 1000;
       background-color: var(--primary);
       color: var(--background);
@@ -92,16 +93,38 @@
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+    .button-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .button-group {
+        justify-content: flex-end;
+        width: 100%;
+      }
+      .toggle-btn {
+        flex: 1 1 auto;
+      }
 
+    }
   </style>
 </head>
 <body>
   <header id="header">
     <h1>Mana digitālā pieredze</h1>
-    <button class="toggle-btn" onclick="scrollToContent()" style="margin-left: 35%;">RTK pieredze</button>
-    <button class="toggle-btn" onclick="scrollToContent()">LU pieredze</button>
-    <button class="toggle-btn" onclick="toggleTheme()">Gaišs/Tumšs</button>
-  </header>
+    <div class="button-group">
+      <button class="toggle-btn" onclick="scrollToContent()">RTK pieredze</button>
+      <button class="toggle-btn" onclick="scrollToContent()">LU pieredze</button>
+      <button class="toggle-btn" onclick="toggleTheme()">Gaišs/Tumšs</button>
+    </div>
+    </header>
 
   <section class="section">
     <div class="text">
@@ -110,7 +133,7 @@
       <button class="toggle-btn" onclick="scrollToContent()" style="width: 60%; display: block; margin-left: 10%; max-height: 120%;">Sākt lasīt</button>
     </div>
     <div class="image">
-      <img src="progress.jpg" alt="Digitālā attīstība">
+      <img src="progress.png" alt="Digitālā attīstība">
     </div>
   </section>
 
@@ -190,7 +213,7 @@
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > lastScrollY) {
-        header.style.top = '-110px';
+        header.style.top = '-200px';
       } else {
         header.style.top = '0';
       }
