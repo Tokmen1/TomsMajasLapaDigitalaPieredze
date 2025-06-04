@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mana digitālā pieredze</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1e0103;
+      --background: #feecec;
+      --primary: #ca585c;
+      --secondary: #fabd61;
+      --accent: #e9b007;
+    }
+
+    [data-theme="dark"] {
+      --text: #fee1e3;
+      --background: #130101;
+      --primary: #a73538;
+      --secondary: #9e6105;
+      --accent: #f8bf16;
+    }
+    [data-theme="dark"] img {
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      transition: all 0.3s ease;
+      padding: 0 5vw;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      margin-left: -5vw;
+      margin-right: -5vw;
+      transition: top 0.3s;
+      z-index: 1000;
+      background-color: var(--primary);
+      color: var(--background);
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .toggle-btn {
+      background-color: var(--accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      color: var(--background);
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .section:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+
+    .text, .image {
+      flex: 1 1 45%;
+      padding: 1rem;
+    }
+
+    .image img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-height: 50vh;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+  </style>
+</head>
+<body>
+  <header id="header">
+    <h1>Mana digitālā pieredze</h1>
+    <button class="toggle-btn" onclick="scrollToContent()" style="margin-left: 35%;">RTK pieredze</button>
+    <button class="toggle-btn" onclick="scrollToContent()">LU pieredze</button>
+    <button class="toggle-btn" onclick="toggleTheme()">Gaišs/Tumšs</button>
+  </header>
+
+  <section class="section">
+    <div class="text">
+      <h2>Digitālais progress un izaicinājumi</h2>
+      <p>Apgūstot jaunas zināšanas un pilveidojot digitālās prasmes, man nācās apgūt jaunus rīkus un tos apgūt pilnībā tādejādi iemācoties jaunas digitālās prasmes mācību un studiju procesā! Šeit pastāstīšu par galvenajām digatālajām prasmēm kuras izmantoju pat vēl šodien!</p>
+      <button class="toggle-btn" onclick="scrollToContent()" style="width: 60%; display: block; margin-left: 10%; max-height: 120%;">Sākt lasīt</button>
+    </div>
+    <div class="image">
+      <img src="progress.jpg" alt="Digitālā attīstība">
+    </div>
+  </section>
+
+  <section class="section" id="rtk-remote-learning">
+    <div class="text">
+      <h2>Mācības Rīgas Tehniskajā koledžā</h2>
+      <p>Tehnikuma laikā apguvu pamatus programmēšanā — C++, Java un tīmekļa izstrādē. Aktīvi izmantoju Git versiju kontrolei un Moodle platformu saziņai ar pasniedzējiem un materiālu iesniegšanai.</p>
+    </div>
+    <div class="image">
+        <img src="https://wwwold.rtk.lv/template/img/logo.png" alt="RTK logo" style="max-width: 300px; max-height: 300px;">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Studijas Latvijas Universitātē</h2>
+      <p>Datorzinātņu studijās LU esmu saskāries ar modernām tehnoloģijām — Docker, GitHub, IntelliJ Idea, kā arī padziļināti apguvu datu struktūras un algoritmus. E-studijas platforma un MS Teams kalpo kā galvenie komunikācijas rīki.</p>
+    </div>
+    <div class="image">
+        <img src="https://www.lu.lv/fileadmin/user_upload/LU.LV/www.lu.lv/Logo/Logo_jaunie/2024_LU_logotips_LAT_horiz.jpg.jpg" alt="LU logo" style="max-width: 612px; max-height: 304px;">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Linux un terminālis</h2>
+      <p>Apguvu Linux operētājsistēmas pamatus un spēju strādāt ar termināli — pārlūkot failus, pārvaldīt pakotnes un konfigurēt vidi.</p>
+    </div>
+    <div class="image">
+      <img src="linux.PNG" alt="Linux terminālis">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Git un versiju kontrole</h2>
+      <p>Uzzināju, kā izmantot Git rīku komandlīnijā — veidot repozitorijus, izsekot izmaiņām, veidot atzarus un apvienot kodu komandas darbā.</p>
+    </div>
+    <div class="image">
+      <img src="git.PNG" alt="Git komandlīnija">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Vue.js un Laravel</h2>
+      <p>Web izstrādē iepazinos ar moderniem rīkiem — Laravel servera pusē un Vue.js klienta pusē. Praktiski izstrādāju dinamiskas lapas un REST API.</p>
+    </div>
+    <div class="image">
+      <img src="laravel-vue.png" alt="Vue.js un Laravel">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Attālinātās mācības RTK laikā</h2>
+      <p>Covid pandēmijas laikā apguvu mācību procesu ar Zoom palīdzību — piedalījos lekcijās, prezentēju projektus un iesniedzu uzdevumus tiešsaistē.</p>
+    </div>
+    <div class="image">
+      <img src="zoom.jpg" alt="Zoom nodarbība" style="max-height: 80vh;">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Attālinātās mācības LU laikā</h2>
+      <p>Latvijas Universitātē attālinātās lekcijas notika MS Teams platformā — izmantoju to lekcijām, konsultācijām, failu apmaiņai un grupu darbiem.</p>
+    </div>
+    <div class="image">
+      <img src="ms_teams.PNG" alt="MS Teams lietošana">
+    </div>
+  </section>
+
+  <script>
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        header.style.top = '-110px';
+      } else {
+        header.style.top = '0';
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.getAttribute("data-theme") === "dark") {
+        html.removeAttribute("data-theme");
+      } else {
+        html.setAttribute("data-theme", "dark");
+      }
+    }
+    function scrollToContent() {
+      const section = document.getElementById('rtk-remote-learning');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
